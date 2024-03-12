@@ -1,0 +1,308 @@
+package com.mbts.fix.gen.group;
+
+import com.mbts.fix.message.AbstractGroupComponent;
+import com.mbts.fix.message.AbstractMessage;
+import com.mbts.fix.gen.field.*;
+import lombok.Getter;
+import com.mbts.fix.api.*;
+
+@Getter
+@SuppressWarnings ("unused")
+public class LegsGroup2Comp extends AbstractGroupComponent {
+
+  private final LegSymbol legSymbol;
+  private final LegSymbolSfx legSymbolSfx;
+  private final LegSecurityID legSecurityID;
+  private final LegSecurityIDSource legSecurityIDSource;
+  private final LegSecurityAltIDGroup legSecurityAltIDGroup;
+  private final LegProduct legProduct;
+  private final LegCFICode legCFICode;
+  private final LegSecurityType legSecurityType;
+  private final LegSecuritySubType legSecuritySubType;
+  private final LegMaturityMonthYear legMaturityMonthYear;
+  private final LegMaturityDate legMaturityDate;
+  private final LegCouponPaymentDate legCouponPaymentDate;
+  private final LegIssueDate legIssueDate;
+  private final LegRepoCollateralSecurityType legRepoCollateralSecurityType;
+  private final LegRepurchaseTerm legRepurchaseTerm;
+  private final LegRepurchaseRate legRepurchaseRate;
+  private final LegFactor legFactor;
+  private final LegCreditRating legCreditRating;
+  private final LegInstrRegistry legInstrRegistry;
+  private final LegCountryOfIssue legCountryOfIssue;
+  private final LegStateOrProvinceOfIssue legStateOrProvinceOfIssue;
+  private final LegLocaleOfIssue legLocaleOfIssue;
+  private final LegRedemptionDate legRedemptionDate;
+  private final LegStrikePrice legStrikePrice;
+  private final LegStrikeCurrency legStrikeCurrency;
+  private final LegOptAttribute legOptAttribute;
+  private final LegContractMultiplier legContractMultiplier;
+  private final LegCouponRate legCouponRate;
+  private final LegSecurityExchange legSecurityExchange;
+  private final LegIssuer legIssuer;
+  private final EncodedLegIssuerLen encodedLegIssuerLen;
+  private final EncodedLegIssuer encodedLegIssuer;
+  private final LegSecurityDesc legSecurityDesc;
+  private final EncodedLegSecurityDescLen encodedLegSecurityDescLen;
+  private final EncodedLegSecurityDesc encodedLegSecurityDesc;
+  private final LegRatioQty legRatioQty;
+  private final LegSide legSide;
+  private final LegCurrency legCurrency;
+  private final LegPool legPool;
+  private final LegDatedDate legDatedDate;
+  private final LegContractSettlMonth legContractSettlMonth;
+  private final LegInterestAccrualDate legInterestAccrualDate;
+  private final LegQty legQty;
+  private final LegSwapType legSwapType;
+  private final LegStipulationsGroup legStipulationsGroup;
+  private final LegPositionEffect legPositionEffect;
+  private final LegCoveredOrUncovered legCoveredOrUncovered;
+  private final NestedPartyIDsGroup nestedPartyIDsGroup;
+  private final LegRefID legRefID;
+  private final LegPrice legPrice;
+  private final LegSettlType legSettlType;
+  private final LegSettlDate legSettlDate;
+  private final LegLastPx legLastPx;
+
+  public LegsGroup2Comp(AbstractMessage message) {
+    super(message);
+    legSymbol = new LegSymbol(message);
+    legSymbolSfx = new LegSymbolSfx(message);
+    legSecurityID = new LegSecurityID(message);
+    legSecurityIDSource = new LegSecurityIDSource(message);
+    legSecurityAltIDGroup = new LegSecurityAltIDGroup(message);
+    legProduct = new LegProduct(message);
+    legCFICode = new LegCFICode(message);
+    legSecurityType = new LegSecurityType(message);
+    legSecuritySubType = new LegSecuritySubType(message);
+    legMaturityMonthYear = new LegMaturityMonthYear(message);
+    legMaturityDate = new LegMaturityDate(message);
+    legCouponPaymentDate = new LegCouponPaymentDate(message);
+    legIssueDate = new LegIssueDate(message);
+    legRepoCollateralSecurityType = new LegRepoCollateralSecurityType(message);
+    legRepurchaseTerm = new LegRepurchaseTerm(message);
+    legRepurchaseRate = new LegRepurchaseRate(message);
+    legFactor = new LegFactor(message);
+    legCreditRating = new LegCreditRating(message);
+    legInstrRegistry = new LegInstrRegistry(message);
+    legCountryOfIssue = new LegCountryOfIssue(message);
+    legStateOrProvinceOfIssue = new LegStateOrProvinceOfIssue(message);
+    legLocaleOfIssue = new LegLocaleOfIssue(message);
+    legRedemptionDate = new LegRedemptionDate(message);
+    legStrikePrice = new LegStrikePrice(message);
+    legStrikeCurrency = new LegStrikeCurrency(message);
+    legOptAttribute = new LegOptAttribute(message);
+    legContractMultiplier = new LegContractMultiplier(message);
+    legCouponRate = new LegCouponRate(message);
+    legSecurityExchange = new LegSecurityExchange(message);
+    legIssuer = new LegIssuer(message);
+    encodedLegIssuerLen = new EncodedLegIssuerLen(message);
+    encodedLegIssuer = new EncodedLegIssuer(message);
+    legSecurityDesc = new LegSecurityDesc(message);
+    encodedLegSecurityDescLen = new EncodedLegSecurityDescLen(message);
+    encodedLegSecurityDesc = new EncodedLegSecurityDesc(message);
+    legRatioQty = new LegRatioQty(message);
+    legSide = new LegSide(message);
+    legCurrency = new LegCurrency(message);
+    legPool = new LegPool(message);
+    legDatedDate = new LegDatedDate(message);
+    legContractSettlMonth = new LegContractSettlMonth(message);
+    legInterestAccrualDate = new LegInterestAccrualDate(message);
+    legQty = new LegQty(message);
+    legSwapType = new LegSwapType(message);
+    legStipulationsGroup = new LegStipulationsGroup(message);
+    legPositionEffect = new LegPositionEffect(message);
+    legCoveredOrUncovered = new LegCoveredOrUncovered(message);
+    nestedPartyIDsGroup = new NestedPartyIDsGroup(message);
+    legRefID = new LegRefID(message);
+    legPrice = new LegPrice(message);
+    legSettlType = new LegSettlType(message);
+    legSettlDate = new LegSettlDate(message);
+    legLastPx = new LegLastPx(message);
+  }
+
+  @Override
+  public Field map(int tag, int fldBeg) {
+    long version = message.version();
+    byte[] bytes = message.bytes();
+    return switch (tag) {
+      case 600 -> legSymbol.map(version, bytes, fldBeg);
+      case 601 -> legSymbolSfx.map(version, bytes, fldBeg);
+      case 602 -> legSecurityID.map(version, bytes, fldBeg);
+      case 603 -> legSecurityIDSource.map(version, bytes, fldBeg);
+      case 604,605,606 -> 
+          legSecurityAltIDGroup.map(tag, fldBeg);
+      case 607 -> legProduct.map(version, bytes, fldBeg);
+      case 608 -> legCFICode.map(version, bytes, fldBeg);
+      case 609 -> legSecurityType.map(version, bytes, fldBeg);
+      case 764 -> legSecuritySubType.map(version, bytes, fldBeg);
+      case 610 -> legMaturityMonthYear.map(version, bytes, fldBeg);
+      case 611 -> legMaturityDate.map(version, bytes, fldBeg);
+      case 248 -> legCouponPaymentDate.map(version, bytes, fldBeg);
+      case 249 -> legIssueDate.map(version, bytes, fldBeg);
+      case 250 -> legRepoCollateralSecurityType.map(version, bytes, fldBeg);
+      case 251 -> legRepurchaseTerm.map(version, bytes, fldBeg);
+      case 252 -> legRepurchaseRate.map(version, bytes, fldBeg);
+      case 253 -> legFactor.map(version, bytes, fldBeg);
+      case 257 -> legCreditRating.map(version, bytes, fldBeg);
+      case 599 -> legInstrRegistry.map(version, bytes, fldBeg);
+      case 596 -> legCountryOfIssue.map(version, bytes, fldBeg);
+      case 597 -> legStateOrProvinceOfIssue.map(version, bytes, fldBeg);
+      case 598 -> legLocaleOfIssue.map(version, bytes, fldBeg);
+      case 254 -> legRedemptionDate.map(version, bytes, fldBeg);
+      case 612 -> legStrikePrice.map(version, bytes, fldBeg);
+      case 942 -> legStrikeCurrency.map(version, bytes, fldBeg);
+      case 613 -> legOptAttribute.map(version, bytes, fldBeg);
+      case 614 -> legContractMultiplier.map(version, bytes, fldBeg);
+      case 615 -> legCouponRate.map(version, bytes, fldBeg);
+      case 616 -> legSecurityExchange.map(version, bytes, fldBeg);
+      case 617 -> legIssuer.map(version, bytes, fldBeg);
+      case 618 -> encodedLegIssuerLen.map(version, bytes, fldBeg);
+      case 619 -> encodedLegIssuer.map(version, bytes, fldBeg);
+      case 620 -> legSecurityDesc.map(version, bytes, fldBeg);
+      case 621 -> encodedLegSecurityDescLen.map(version, bytes, fldBeg);
+      case 622 -> encodedLegSecurityDesc.map(version, bytes, fldBeg);
+      case 623 -> legRatioQty.map(version, bytes, fldBeg);
+      case 624 -> legSide.map(version, bytes, fldBeg);
+      case 556 -> legCurrency.map(version, bytes, fldBeg);
+      case 740 -> legPool.map(version, bytes, fldBeg);
+      case 739 -> legDatedDate.map(version, bytes, fldBeg);
+      case 955 -> legContractSettlMonth.map(version, bytes, fldBeg);
+      case 956 -> legInterestAccrualDate.map(version, bytes, fldBeg);
+      case 687 -> legQty.map(version, bytes, fldBeg);
+      case 690 -> legSwapType.map(version, bytes, fldBeg);
+      case 688,689,683 -> 
+          legStipulationsGroup.map(tag, fldBeg);
+      case 564 -> legPositionEffect.map(version, bytes, fldBeg);
+      case 565 -> legCoveredOrUncovered.map(version, bytes, fldBeg);
+      case 545,804,805,538,539,524,525 -> 
+          nestedPartyIDsGroup.map(tag, fldBeg);
+      case 654 -> legRefID.map(version, bytes, fldBeg);
+      case 566 -> legPrice.map(version, bytes, fldBeg);
+      case 587 -> legSettlType.map(version, bytes, fldBeg);
+      case 588 -> legSettlDate.map(version, bytes, fldBeg);
+      case 637 -> legLastPx.map(version, bytes, fldBeg);
+      default -> message.unknownField(fldBeg);
+    };
+  }
+
+  @Override
+  public Field field(Tag tag) {
+    return switch (tag.tag()) {
+      case 600 -> legSymbol;
+      case 601 -> legSymbolSfx;
+      case 602 -> legSecurityID;
+      case 603 -> legSecurityIDSource;
+      case 604,605,606 -> 
+          legSecurityAltIDGroup.field(tag);
+      case 607 -> legProduct;
+      case 608 -> legCFICode;
+      case 609 -> legSecurityType;
+      case 764 -> legSecuritySubType;
+      case 610 -> legMaturityMonthYear;
+      case 611 -> legMaturityDate;
+      case 248 -> legCouponPaymentDate;
+      case 249 -> legIssueDate;
+      case 250 -> legRepoCollateralSecurityType;
+      case 251 -> legRepurchaseTerm;
+      case 252 -> legRepurchaseRate;
+      case 253 -> legFactor;
+      case 257 -> legCreditRating;
+      case 599 -> legInstrRegistry;
+      case 596 -> legCountryOfIssue;
+      case 597 -> legStateOrProvinceOfIssue;
+      case 598 -> legLocaleOfIssue;
+      case 254 -> legRedemptionDate;
+      case 612 -> legStrikePrice;
+      case 942 -> legStrikeCurrency;
+      case 613 -> legOptAttribute;
+      case 614 -> legContractMultiplier;
+      case 615 -> legCouponRate;
+      case 616 -> legSecurityExchange;
+      case 617 -> legIssuer;
+      case 618 -> encodedLegIssuerLen;
+      case 619 -> encodedLegIssuer;
+      case 620 -> legSecurityDesc;
+      case 621 -> encodedLegSecurityDescLen;
+      case 622 -> encodedLegSecurityDesc;
+      case 623 -> legRatioQty;
+      case 624 -> legSide;
+      case 556 -> legCurrency;
+      case 740 -> legPool;
+      case 739 -> legDatedDate;
+      case 955 -> legContractSettlMonth;
+      case 956 -> legInterestAccrualDate;
+      case 687 -> legQty;
+      case 690 -> legSwapType;
+      case 688,689,683 -> 
+          legStipulationsGroup.field(tag);
+      case 564 -> legPositionEffect;
+      case 565 -> legCoveredOrUncovered;
+      case 545,804,805,538,539,524,525 -> 
+          nestedPartyIDsGroup.field(tag);
+      case 654 -> legRefID;
+      case 566 -> legPrice;
+      case 587 -> legSettlType;
+      case 588 -> legSettlDate;
+      case 637 -> legLastPx;
+      default -> null;
+    };
+  }
+  @Override
+  public int write (int valBeg) {
+    valBeg = legSymbol.write(valBeg);
+    valBeg = legSymbolSfx.write(valBeg);
+    valBeg = legSecurityID.write(valBeg);
+    valBeg = legSecurityIDSource.write(valBeg);
+    valBeg = legSecurityAltIDGroup.write(valBeg);
+    valBeg = legProduct.write(valBeg);
+    valBeg = legCFICode.write(valBeg);
+    valBeg = legSecurityType.write(valBeg);
+    valBeg = legSecuritySubType.write(valBeg);
+    valBeg = legMaturityMonthYear.write(valBeg);
+    valBeg = legMaturityDate.write(valBeg);
+    valBeg = legCouponPaymentDate.write(valBeg);
+    valBeg = legIssueDate.write(valBeg);
+    valBeg = legRepoCollateralSecurityType.write(valBeg);
+    valBeg = legRepurchaseTerm.write(valBeg);
+    valBeg = legRepurchaseRate.write(valBeg);
+    valBeg = legFactor.write(valBeg);
+    valBeg = legCreditRating.write(valBeg);
+    valBeg = legInstrRegistry.write(valBeg);
+    valBeg = legCountryOfIssue.write(valBeg);
+    valBeg = legStateOrProvinceOfIssue.write(valBeg);
+    valBeg = legLocaleOfIssue.write(valBeg);
+    valBeg = legRedemptionDate.write(valBeg);
+    valBeg = legStrikePrice.write(valBeg);
+    valBeg = legStrikeCurrency.write(valBeg);
+    valBeg = legOptAttribute.write(valBeg);
+    valBeg = legContractMultiplier.write(valBeg);
+    valBeg = legCouponRate.write(valBeg);
+    valBeg = legSecurityExchange.write(valBeg);
+    valBeg = legIssuer.write(valBeg);
+    valBeg = encodedLegIssuerLen.write(valBeg);
+    valBeg = encodedLegIssuer.write(valBeg);
+    valBeg = legSecurityDesc.write(valBeg);
+    valBeg = encodedLegSecurityDescLen.write(valBeg);
+    valBeg = encodedLegSecurityDesc.write(valBeg);
+    valBeg = legRatioQty.write(valBeg);
+    valBeg = legSide.write(valBeg);
+    valBeg = legCurrency.write(valBeg);
+    valBeg = legPool.write(valBeg);
+    valBeg = legDatedDate.write(valBeg);
+    valBeg = legContractSettlMonth.write(valBeg);
+    valBeg = legInterestAccrualDate.write(valBeg);
+    valBeg = legQty.write(valBeg);
+    valBeg = legSwapType.write(valBeg);
+    valBeg = legStipulationsGroup.write(valBeg);
+    valBeg = legPositionEffect.write(valBeg);
+    valBeg = legCoveredOrUncovered.write(valBeg);
+    valBeg = nestedPartyIDsGroup.write(valBeg);
+    valBeg = legRefID.write(valBeg);
+    valBeg = legPrice.write(valBeg);
+    valBeg = legSettlType.write(valBeg);
+    valBeg = legSettlDate.write(valBeg);
+    valBeg = legLastPx.write(valBeg);
+    return valBeg; 
+  }
+}

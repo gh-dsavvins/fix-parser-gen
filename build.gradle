@@ -1,0 +1,49 @@
+plugins {
+  id "java-library"
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  annotationProcessor("org.projectlombok:lombok:${lombok}")
+  implementation("org.slf4j:slf4j-simple:${slf}")
+  implementation("org.slf4j:slf4j-api:${slf}")
+  implementation "commons-io:commons-io:${commonsIO}"
+  implementation "commons-cli:commons-cli:${commonsCLI}"
+  compileOnly("org.projectlombok:lombok:${lombok}")
+  testAnnotationProcessor("org.projectlombok:lombok:${lombok}")
+  testCompileOnly("org.projectlombok:lombok:${lombok}")
+  testImplementation platform("org.junit:junit-bom:${junit}")
+  testImplementation("org.junit.jupiter:junit-jupiter:${jupiter}")
+}
+
+test {
+  useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).each {
+  it.options.compilerArgs.add('--enable-preview')
+}
+
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(18))
+  }
+}
+
+tasks.register('generate', JavaExec) {
+  classpath += sourceSets.main.runtimeClasspath
+  setMainClass("com.mbts.fix.generator.Generator")
+  jvmArgs = ["--enable-preview"]
+  args = [
+      "--fix", "${projectDir}/src/main/resources/quickfix.44.xml",
+      "--version", "FIX.4.4",
+      "--output", "${projectDir}/src/main/java",
+      "--package", "com.mbts.fix.gen"
+  ]
+}

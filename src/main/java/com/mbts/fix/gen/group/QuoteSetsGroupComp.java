@@ -1,0 +1,298 @@
+package com.mbts.fix.gen.group;
+
+import com.mbts.fix.message.AbstractGroupComponent;
+import com.mbts.fix.message.AbstractMessage;
+import com.mbts.fix.gen.field.*;
+import lombok.Getter;
+import com.mbts.fix.api.*;
+
+@Getter
+@SuppressWarnings ("unused")
+public class QuoteSetsGroupComp extends AbstractGroupComponent {
+
+  private final QuoteSetID quoteSetID;
+  private final UnderlyingSymbol underlyingSymbol;
+  private final UnderlyingSymbolSfx underlyingSymbolSfx;
+  private final UnderlyingSecurityID underlyingSecurityID;
+  private final UnderlyingSecurityIDSource underlyingSecurityIDSource;
+  private final UnderlyingSecurityAltIDGroup underlyingSecurityAltIDGroup;
+  private final UnderlyingProduct underlyingProduct;
+  private final UnderlyingCFICode underlyingCFICode;
+  private final UnderlyingSecurityType underlyingSecurityType;
+  private final UnderlyingSecuritySubType underlyingSecuritySubType;
+  private final UnderlyingMaturityMonthYear underlyingMaturityMonthYear;
+  private final UnderlyingMaturityDate underlyingMaturityDate;
+  private final UnderlyingPutOrCall underlyingPutOrCall;
+  private final UnderlyingCouponPaymentDate underlyingCouponPaymentDate;
+  private final UnderlyingIssueDate underlyingIssueDate;
+  private final UnderlyingRepoCollateralSecurityType underlyingRepoCollateralSecurityType;
+  private final UnderlyingRepurchaseTerm underlyingRepurchaseTerm;
+  private final UnderlyingRepurchaseRate underlyingRepurchaseRate;
+  private final UnderlyingFactor underlyingFactor;
+  private final UnderlyingCreditRating underlyingCreditRating;
+  private final UnderlyingInstrRegistry underlyingInstrRegistry;
+  private final UnderlyingCountryOfIssue underlyingCountryOfIssue;
+  private final UnderlyingStateOrProvinceOfIssue underlyingStateOrProvinceOfIssue;
+  private final UnderlyingLocaleOfIssue underlyingLocaleOfIssue;
+  private final UnderlyingRedemptionDate underlyingRedemptionDate;
+  private final UnderlyingStrikePrice underlyingStrikePrice;
+  private final UnderlyingStrikeCurrency underlyingStrikeCurrency;
+  private final UnderlyingOptAttribute underlyingOptAttribute;
+  private final UnderlyingContractMultiplier underlyingContractMultiplier;
+  private final UnderlyingCouponRate underlyingCouponRate;
+  private final UnderlyingSecurityExchange underlyingSecurityExchange;
+  private final UnderlyingIssuer underlyingIssuer;
+  private final EncodedUnderlyingIssuerLen encodedUnderlyingIssuerLen;
+  private final EncodedUnderlyingIssuer encodedUnderlyingIssuer;
+  private final UnderlyingSecurityDesc underlyingSecurityDesc;
+  private final EncodedUnderlyingSecurityDescLen encodedUnderlyingSecurityDescLen;
+  private final EncodedUnderlyingSecurityDesc encodedUnderlyingSecurityDesc;
+  private final UnderlyingCPProgram underlyingCPProgram;
+  private final UnderlyingCPRegType underlyingCPRegType;
+  private final UnderlyingCurrency underlyingCurrency;
+  private final UnderlyingQty underlyingQty;
+  private final UnderlyingPx underlyingPx;
+  private final UnderlyingDirtyPrice underlyingDirtyPrice;
+  private final UnderlyingEndPrice underlyingEndPrice;
+  private final UnderlyingStartValue underlyingStartValue;
+  private final UnderlyingCurrentValue underlyingCurrentValue;
+  private final UnderlyingEndValue underlyingEndValue;
+  private final UnderlyingStipsGroup underlyingStipsGroup;
+  private final TotNoQuoteEntries totNoQuoteEntries;
+  private final LastFragment lastFragment;
+  private final QuoteEntriesGroup1 quoteEntriesGroup1;
+
+  public QuoteSetsGroupComp(AbstractMessage message) {
+    super(message);
+    quoteSetID = new QuoteSetID(message);
+    underlyingSymbol = new UnderlyingSymbol(message);
+    underlyingSymbolSfx = new UnderlyingSymbolSfx(message);
+    underlyingSecurityID = new UnderlyingSecurityID(message);
+    underlyingSecurityIDSource = new UnderlyingSecurityIDSource(message);
+    underlyingSecurityAltIDGroup = new UnderlyingSecurityAltIDGroup(message);
+    underlyingProduct = new UnderlyingProduct(message);
+    underlyingCFICode = new UnderlyingCFICode(message);
+    underlyingSecurityType = new UnderlyingSecurityType(message);
+    underlyingSecuritySubType = new UnderlyingSecuritySubType(message);
+    underlyingMaturityMonthYear = new UnderlyingMaturityMonthYear(message);
+    underlyingMaturityDate = new UnderlyingMaturityDate(message);
+    underlyingPutOrCall = new UnderlyingPutOrCall(message);
+    underlyingCouponPaymentDate = new UnderlyingCouponPaymentDate(message);
+    underlyingIssueDate = new UnderlyingIssueDate(message);
+    underlyingRepoCollateralSecurityType = new UnderlyingRepoCollateralSecurityType(message);
+    underlyingRepurchaseTerm = new UnderlyingRepurchaseTerm(message);
+    underlyingRepurchaseRate = new UnderlyingRepurchaseRate(message);
+    underlyingFactor = new UnderlyingFactor(message);
+    underlyingCreditRating = new UnderlyingCreditRating(message);
+    underlyingInstrRegistry = new UnderlyingInstrRegistry(message);
+    underlyingCountryOfIssue = new UnderlyingCountryOfIssue(message);
+    underlyingStateOrProvinceOfIssue = new UnderlyingStateOrProvinceOfIssue(message);
+    underlyingLocaleOfIssue = new UnderlyingLocaleOfIssue(message);
+    underlyingRedemptionDate = new UnderlyingRedemptionDate(message);
+    underlyingStrikePrice = new UnderlyingStrikePrice(message);
+    underlyingStrikeCurrency = new UnderlyingStrikeCurrency(message);
+    underlyingOptAttribute = new UnderlyingOptAttribute(message);
+    underlyingContractMultiplier = new UnderlyingContractMultiplier(message);
+    underlyingCouponRate = new UnderlyingCouponRate(message);
+    underlyingSecurityExchange = new UnderlyingSecurityExchange(message);
+    underlyingIssuer = new UnderlyingIssuer(message);
+    encodedUnderlyingIssuerLen = new EncodedUnderlyingIssuerLen(message);
+    encodedUnderlyingIssuer = new EncodedUnderlyingIssuer(message);
+    underlyingSecurityDesc = new UnderlyingSecurityDesc(message);
+    encodedUnderlyingSecurityDescLen = new EncodedUnderlyingSecurityDescLen(message);
+    encodedUnderlyingSecurityDesc = new EncodedUnderlyingSecurityDesc(message);
+    underlyingCPProgram = new UnderlyingCPProgram(message);
+    underlyingCPRegType = new UnderlyingCPRegType(message);
+    underlyingCurrency = new UnderlyingCurrency(message);
+    underlyingQty = new UnderlyingQty(message);
+    underlyingPx = new UnderlyingPx(message);
+    underlyingDirtyPrice = new UnderlyingDirtyPrice(message);
+    underlyingEndPrice = new UnderlyingEndPrice(message);
+    underlyingStartValue = new UnderlyingStartValue(message);
+    underlyingCurrentValue = new UnderlyingCurrentValue(message);
+    underlyingEndValue = new UnderlyingEndValue(message);
+    underlyingStipsGroup = new UnderlyingStipsGroup(message);
+    totNoQuoteEntries = new TotNoQuoteEntries(message);
+    lastFragment = new LastFragment(message);
+    quoteEntriesGroup1 = new QuoteEntriesGroup1(message);
+  }
+
+  @Override
+  public Field map(int tag, int fldBeg) {
+    long version = message.version();
+    byte[] bytes = message.bytes();
+    return switch (tag) {
+      case 302 -> quoteSetID.map(version, bytes, fldBeg);
+      case 311 -> underlyingSymbol.map(version, bytes, fldBeg);
+      case 312 -> underlyingSymbolSfx.map(version, bytes, fldBeg);
+      case 309 -> underlyingSecurityID.map(version, bytes, fldBeg);
+      case 305 -> underlyingSecurityIDSource.map(version, bytes, fldBeg);
+      case 457,458,459 -> 
+          underlyingSecurityAltIDGroup.map(tag, fldBeg);
+      case 462 -> underlyingProduct.map(version, bytes, fldBeg);
+      case 463 -> underlyingCFICode.map(version, bytes, fldBeg);
+      case 310 -> underlyingSecurityType.map(version, bytes, fldBeg);
+      case 763 -> underlyingSecuritySubType.map(version, bytes, fldBeg);
+      case 313 -> underlyingMaturityMonthYear.map(version, bytes, fldBeg);
+      case 542 -> underlyingMaturityDate.map(version, bytes, fldBeg);
+      case 315 -> underlyingPutOrCall.map(version, bytes, fldBeg);
+      case 241 -> underlyingCouponPaymentDate.map(version, bytes, fldBeg);
+      case 242 -> underlyingIssueDate.map(version, bytes, fldBeg);
+      case 243 -> underlyingRepoCollateralSecurityType.map(version, bytes, fldBeg);
+      case 244 -> underlyingRepurchaseTerm.map(version, bytes, fldBeg);
+      case 245 -> underlyingRepurchaseRate.map(version, bytes, fldBeg);
+      case 246 -> underlyingFactor.map(version, bytes, fldBeg);
+      case 256 -> underlyingCreditRating.map(version, bytes, fldBeg);
+      case 595 -> underlyingInstrRegistry.map(version, bytes, fldBeg);
+      case 592 -> underlyingCountryOfIssue.map(version, bytes, fldBeg);
+      case 593 -> underlyingStateOrProvinceOfIssue.map(version, bytes, fldBeg);
+      case 594 -> underlyingLocaleOfIssue.map(version, bytes, fldBeg);
+      case 247 -> underlyingRedemptionDate.map(version, bytes, fldBeg);
+      case 316 -> underlyingStrikePrice.map(version, bytes, fldBeg);
+      case 941 -> underlyingStrikeCurrency.map(version, bytes, fldBeg);
+      case 317 -> underlyingOptAttribute.map(version, bytes, fldBeg);
+      case 436 -> underlyingContractMultiplier.map(version, bytes, fldBeg);
+      case 435 -> underlyingCouponRate.map(version, bytes, fldBeg);
+      case 308 -> underlyingSecurityExchange.map(version, bytes, fldBeg);
+      case 306 -> underlyingIssuer.map(version, bytes, fldBeg);
+      case 362 -> encodedUnderlyingIssuerLen.map(version, bytes, fldBeg);
+      case 363 -> encodedUnderlyingIssuer.map(version, bytes, fldBeg);
+      case 307 -> underlyingSecurityDesc.map(version, bytes, fldBeg);
+      case 364 -> encodedUnderlyingSecurityDescLen.map(version, bytes, fldBeg);
+      case 365 -> encodedUnderlyingSecurityDesc.map(version, bytes, fldBeg);
+      case 877 -> underlyingCPProgram.map(version, bytes, fldBeg);
+      case 878 -> underlyingCPRegType.map(version, bytes, fldBeg);
+      case 318 -> underlyingCurrency.map(version, bytes, fldBeg);
+      case 879 -> underlyingQty.map(version, bytes, fldBeg);
+      case 810 -> underlyingPx.map(version, bytes, fldBeg);
+      case 882 -> underlyingDirtyPrice.map(version, bytes, fldBeg);
+      case 883 -> underlyingEndPrice.map(version, bytes, fldBeg);
+      case 884 -> underlyingStartValue.map(version, bytes, fldBeg);
+      case 885 -> underlyingCurrentValue.map(version, bytes, fldBeg);
+      case 886 -> underlyingEndValue.map(version, bytes, fldBeg);
+      case 887,888,889 -> 
+          underlyingStipsGroup.map(tag, fldBeg);
+      case 304 -> totNoQuoteEntries.map(version, bytes, fldBeg);
+      case 893 -> lastFragment.map(version, bytes, fldBeg);
+      case 257,15,22,541,543,295,40,299,555,556,48,55,60,62,64,65,336,596,597,598,599,600,601,602,603,348,604,349,605,350,606,351,607,864,608,865,609,866,610,867,611,868,612,613,614,615,616,873,617,106,874,618,107,875,619,876,620,621,622,623,624,368,625,631,632,633,634,642,643,132,133,134,135,667,167,942,947,691,955,956,188,189,190,191,192,193,454,455,456,200,201,202,460,461,206,207,470,471,472,223,224,225,226,227,739,228,740,231,239,240,248,249,762,250,251,764,252,253,254,255 -> 
+          quoteEntriesGroup1.map(tag, fldBeg);
+      default -> message.unknownField(fldBeg);
+    };
+  }
+
+  @Override
+  public Field field(Tag tag) {
+    return switch (tag.tag()) {
+      case 302 -> quoteSetID;
+      case 311 -> underlyingSymbol;
+      case 312 -> underlyingSymbolSfx;
+      case 309 -> underlyingSecurityID;
+      case 305 -> underlyingSecurityIDSource;
+      case 457,458,459 -> 
+          underlyingSecurityAltIDGroup.field(tag);
+      case 462 -> underlyingProduct;
+      case 463 -> underlyingCFICode;
+      case 310 -> underlyingSecurityType;
+      case 763 -> underlyingSecuritySubType;
+      case 313 -> underlyingMaturityMonthYear;
+      case 542 -> underlyingMaturityDate;
+      case 315 -> underlyingPutOrCall;
+      case 241 -> underlyingCouponPaymentDate;
+      case 242 -> underlyingIssueDate;
+      case 243 -> underlyingRepoCollateralSecurityType;
+      case 244 -> underlyingRepurchaseTerm;
+      case 245 -> underlyingRepurchaseRate;
+      case 246 -> underlyingFactor;
+      case 256 -> underlyingCreditRating;
+      case 595 -> underlyingInstrRegistry;
+      case 592 -> underlyingCountryOfIssue;
+      case 593 -> underlyingStateOrProvinceOfIssue;
+      case 594 -> underlyingLocaleOfIssue;
+      case 247 -> underlyingRedemptionDate;
+      case 316 -> underlyingStrikePrice;
+      case 941 -> underlyingStrikeCurrency;
+      case 317 -> underlyingOptAttribute;
+      case 436 -> underlyingContractMultiplier;
+      case 435 -> underlyingCouponRate;
+      case 308 -> underlyingSecurityExchange;
+      case 306 -> underlyingIssuer;
+      case 362 -> encodedUnderlyingIssuerLen;
+      case 363 -> encodedUnderlyingIssuer;
+      case 307 -> underlyingSecurityDesc;
+      case 364 -> encodedUnderlyingSecurityDescLen;
+      case 365 -> encodedUnderlyingSecurityDesc;
+      case 877 -> underlyingCPProgram;
+      case 878 -> underlyingCPRegType;
+      case 318 -> underlyingCurrency;
+      case 879 -> underlyingQty;
+      case 810 -> underlyingPx;
+      case 882 -> underlyingDirtyPrice;
+      case 883 -> underlyingEndPrice;
+      case 884 -> underlyingStartValue;
+      case 885 -> underlyingCurrentValue;
+      case 886 -> underlyingEndValue;
+      case 887,888,889 -> 
+          underlyingStipsGroup.field(tag);
+      case 304 -> totNoQuoteEntries;
+      case 893 -> lastFragment;
+      case 257,15,22,541,543,295,40,299,555,556,48,55,60,62,64,65,336,596,597,598,599,600,601,602,603,348,604,349,605,350,606,351,607,864,608,865,609,866,610,867,611,868,612,613,614,615,616,873,617,106,874,618,107,875,619,876,620,621,622,623,624,368,625,631,632,633,634,642,643,132,133,134,135,667,167,942,947,691,955,956,188,189,190,191,192,193,454,455,456,200,201,202,460,461,206,207,470,471,472,223,224,225,226,227,739,228,740,231,239,240,248,249,762,250,251,764,252,253,254,255 -> 
+          quoteEntriesGroup1.field(tag);
+      default -> null;
+    };
+  }
+  @Override
+  public int write (int valBeg) {
+    valBeg = quoteSetID.write(valBeg);
+    valBeg = underlyingSymbol.write(valBeg);
+    valBeg = underlyingSymbolSfx.write(valBeg);
+    valBeg = underlyingSecurityID.write(valBeg);
+    valBeg = underlyingSecurityIDSource.write(valBeg);
+    valBeg = underlyingSecurityAltIDGroup.write(valBeg);
+    valBeg = underlyingProduct.write(valBeg);
+    valBeg = underlyingCFICode.write(valBeg);
+    valBeg = underlyingSecurityType.write(valBeg);
+    valBeg = underlyingSecuritySubType.write(valBeg);
+    valBeg = underlyingMaturityMonthYear.write(valBeg);
+    valBeg = underlyingMaturityDate.write(valBeg);
+    valBeg = underlyingPutOrCall.write(valBeg);
+    valBeg = underlyingCouponPaymentDate.write(valBeg);
+    valBeg = underlyingIssueDate.write(valBeg);
+    valBeg = underlyingRepoCollateralSecurityType.write(valBeg);
+    valBeg = underlyingRepurchaseTerm.write(valBeg);
+    valBeg = underlyingRepurchaseRate.write(valBeg);
+    valBeg = underlyingFactor.write(valBeg);
+    valBeg = underlyingCreditRating.write(valBeg);
+    valBeg = underlyingInstrRegistry.write(valBeg);
+    valBeg = underlyingCountryOfIssue.write(valBeg);
+    valBeg = underlyingStateOrProvinceOfIssue.write(valBeg);
+    valBeg = underlyingLocaleOfIssue.write(valBeg);
+    valBeg = underlyingRedemptionDate.write(valBeg);
+    valBeg = underlyingStrikePrice.write(valBeg);
+    valBeg = underlyingStrikeCurrency.write(valBeg);
+    valBeg = underlyingOptAttribute.write(valBeg);
+    valBeg = underlyingContractMultiplier.write(valBeg);
+    valBeg = underlyingCouponRate.write(valBeg);
+    valBeg = underlyingSecurityExchange.write(valBeg);
+    valBeg = underlyingIssuer.write(valBeg);
+    valBeg = encodedUnderlyingIssuerLen.write(valBeg);
+    valBeg = encodedUnderlyingIssuer.write(valBeg);
+    valBeg = underlyingSecurityDesc.write(valBeg);
+    valBeg = encodedUnderlyingSecurityDescLen.write(valBeg);
+    valBeg = encodedUnderlyingSecurityDesc.write(valBeg);
+    valBeg = underlyingCPProgram.write(valBeg);
+    valBeg = underlyingCPRegType.write(valBeg);
+    valBeg = underlyingCurrency.write(valBeg);
+    valBeg = underlyingQty.write(valBeg);
+    valBeg = underlyingPx.write(valBeg);
+    valBeg = underlyingDirtyPrice.write(valBeg);
+    valBeg = underlyingEndPrice.write(valBeg);
+    valBeg = underlyingStartValue.write(valBeg);
+    valBeg = underlyingCurrentValue.write(valBeg);
+    valBeg = underlyingEndValue.write(valBeg);
+    valBeg = underlyingStipsGroup.write(valBeg);
+    valBeg = totNoQuoteEntries.write(valBeg);
+    valBeg = lastFragment.write(valBeg);
+    valBeg = quoteEntriesGroup1.write(valBeg);
+    return valBeg; 
+  }
+}
