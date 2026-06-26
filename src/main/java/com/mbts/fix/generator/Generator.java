@@ -705,7 +705,7 @@ public class Generator {
       if(aChar == firstCharInGroup) {
         sameCharAtIxCount++;
       } else {
-        b.append(T[tab + 1]).append("case '").append(firstCharInGroup == '\u0001' ? "\u0001" : (char) firstCharInGroup).append("' -> ");
+        b.append(T[tab + 1]).append("case ").append(firstCharInGroup == '\u0001' ? "'\u0001'" : firstCharInGroup).append(" -> ");
         if (sameCharAtIxCount == 1) {
           appendMultiStringFieldSet(b, codeToName, firstStringInGroup);
         } else {
@@ -718,7 +718,7 @@ public class Generator {
         sameCharAtIxCount = 1;
       }
     }
-    b.append(T[tab + 1]).append("case '").append(firstCharInGroup == '\u0001' ? "\u0001" : (char) firstCharInGroup).append("' -> ");
+    b.append(T[tab + 1]).append("case ").append(firstCharInGroup == '\u0001' ? "'\u0001'" : firstCharInGroup).append(" -> ");
     if(sameCharAtIxCount == 1) {
       appendMultiStringFieldSet(b, codeToName, firstStringInGroup);
     } else {

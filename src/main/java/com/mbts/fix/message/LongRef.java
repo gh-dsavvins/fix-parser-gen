@@ -37,7 +37,7 @@ public class LongRef extends NumberRef {
     boolean neg = false;
     byte[] bytes = message.bytes;
     int beg = valBeg;
-    if(bytes[beg] == '-') {
+    if (bytes[beg] == '-') {
       neg = true;
       beg++;
     }
@@ -46,7 +46,7 @@ public class LongRef extends NumberRef {
       value *= 10;
       value += c - '0';
     }
-    if(neg) {
+    if (neg) {
       value = -value;
     }
   }
