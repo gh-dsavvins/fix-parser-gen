@@ -1,29 +1,19 @@
-# README #
+# fix-parser-gen
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A zero-allocation FIX protocol parser for Java, generated from a QuickFIX XML dictionary (FIX 4.4).
 
-### What is this repository for? ###
+The generator turns the dictionary into typed Java classes for every field, group and message. Messages are mapped rather than parsed: each field stores the offsets of its value in the raw bytes and decodes it only when read. Message objects are reused, so parsing creates no garbage.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Test results
 
-### How do I get set up? ###
+`LatencyTest`: 10,000,000 messages, cycling through 42 real FIX messages (ExecutionReport, NewOrderSingle, OrderCancelRequest, OrderCancelReplaceRequest, Reject), single thread, JDK 18.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+```
+time:                16322509083 nanos
+avg message size:          234.31 bytes
+time per byte               6.97 nanos
+clock per byte             24.31
+time per message         1632.25 nanos
+```
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+**About 1.6 µs per message, or 7 ns per byte.**
