@@ -4,16 +4,26 @@ A zero-allocation FIX protocol parser for Java, generated from a QuickFIX XML di
 
 The generator turns the dictionary into typed Java classes for every field, group and message. Messages are mapped rather than parsed: each field stores the offsets of its value in the raw bytes and decodes it only when read. Message objects are reused, so parsing creates no garbage.
 
+## Required JVM flag
+
+Run with:
+
+```
+-XX:-DontCompileHugeMethods
+```
+
+By default, HotSpot never JIT-compiles a method larger than 8,000 bytes of bytecode. Some of the generated `map(int)` methods are larger than that (`ExecutionReport` is 15,290 bytes), so without this flag they stay interpreted and parsing is about 6× slower.
+
 ## Test results
 
-`LatencyTest`: 10,000,000 messages, cycling through 42 real FIX messages (ExecutionReport, NewOrderSingle, OrderCancelRequest, OrderCancelReplaceRequest, Reject), single thread, JDK 18.
+`LatencyTest`: 10,000,000 messages, cycling through 42 real FIX messages (ExecutionReport, NewOrderSingle, OrderCancelRequest, OrderCancelReplaceRequest, Reject), single thread, JDK 18, with `-XX:-DontCompileHugeMethods`.
 
 ```
-time:                16322509083 nanos
+time:                 2637104250 nanos
 avg message size:          234.31 bytes
-time per byte               6.97 nanos
-clock per byte             24.31
-time per message         1632.25 nanos
+time per byte               1.13 nanos
+clock per byte              3.93
+time per message          263.71 nanos
 ```
 
-**About 1.6 µs per message, or 7 ns per byte.**
+**About 264 ns per message, or 1.1 ns per byte.**
